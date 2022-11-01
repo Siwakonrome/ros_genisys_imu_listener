@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="pipe_radius" default="0.55"></arg>
+  <arg name="model" default="$(find ros_genisys_imu_listener)/urdf/plane.urdf.xacro"/>
+    
+  <param name="robot_description" command="xacro $(arg model)" />
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" ></node>
+  
+  <node pkg="ros_genisys_imu_listener" type="broadcaster_imu.py" name="rpy_tf" output="screen">
+    <param name="/pipe_radius"   value="$(arg pipe_radius)"/>
+  </node>
+   
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ros_genisys_imu_listener)/config/rviz_config.rviz"/> 
+</launch>

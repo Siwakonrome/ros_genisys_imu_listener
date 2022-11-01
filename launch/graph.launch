@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+  <node pkg="ros_genisys_imu_listener" type="euler_graph.py" name="euler_graph_node" output="screen"></node>
+</launch>

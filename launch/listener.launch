@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+  <node pkg="ros_genisys_imu_listener" type="euler_listener.py" name="euler_listener_node" output="screen">
+    <param name="/topic_imu/imu_data"   value="/imu/data"/>
+    <param name="/topic_imu/imu_mag"    value="/imu/mag"/>
+  </node>
+</launch>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="pipe_radius" default="0.0"></arg>
+  <node pkg="ros_genisys_imu_listener" type="broadcaster_imu.py" name="tf_broadcaster_imu" output="screen">
+    <param name="/pipe_radius"   value="$(arg pipe_radius)"/>
+  </node>
+</launch>
